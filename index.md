@@ -4,7 +4,7 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](another-page).
+[lthyzy1](https://github.com/Lemonjing/lemonjing.github.io).
 
 There should be whitespace between paragraphs.
 
@@ -12,18 +12,18 @@ There should be whitespace between paragraphs. We recommend including a README, 
 
 # [](#header-1)Header 1
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+作业一
 
 ## [](#header-2)Header 2
 
-> This is a blockquote following a header.
+>作业二.
 >
-> When something is important enough, you do it even if the odds are not in your favor.
+> 啦啦啦r.
 
 ### [](#header-3)Header 3
 
 ```js
-// Javascript code with syntax highlighting.
+// Javascript code with syntax highlighting.放代码的
 var fun = function lang(l) {
   dateformat.i18n = require('./lang/' + l)
   return true;
@@ -37,19 +37,19 @@ GitHubPages::Dependencies.gems.each do |gem, version|
 end
 ```
 
-#### [](#header-4)Header 4
+#### [](#header-4)第四个标题
 
 *   This is an unordered list following a header.
 *   This is an unordered list following a header.
 *   This is an unordered list following a header.
 
-##### [](#header-5)Header 5
+##### [](#header-5)标题五
 
 1.  This is an ordered list following a header.
 2.  This is an ordered list following a header.
 3.  This is an ordered list following a header.
 
-###### [](#header-6)Header 6
+###### [](#header-6)六
 
 | head1        | head two          | three |
 |:-------------|:------------------|:------|
