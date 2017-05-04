@@ -137,21 +137,76 @@ void loop() {
 >
 > 啦啦啦r.
 
-### [](#header-3)Header 3
+### [](#header-3)作业三 温度灯
+
+以温度感应器带动两只LED灯的颜色变化。
+
+温度小于10℃时，颜色最冷，为两个蓝色，10℃~20℃，20℃~30℃，30℃~35℃灯光颜色逐渐变暖，35以上时两个灯都为红色。
 
 ```js
-// Javascript code with syntax highlighting.放代码的
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+#include <Adafruit_NeoPixel.h>  
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
+Adafruit_NeoPixel ColorLED = Adafruit_NeoPixel (2, 6, NEO_GRB + NEO_KHZ800);
+
+#include <Wire.h>
+
+#include <lm75.h>
+
+TempI2C_LM75 termo = TempI2C_LM75(0x48, TempI2C_LM75::nine_bits);
+
+
+
+void setup()
+{
+  Serial.begin(9600);
+  ColorLED.begin();
+}
+
+void loop()
+{
+  Serial.print(termo.getTemp());
+  Serial.println(" oC");
+  delay(1000);
+  
+  float temp = termo.getTemp();
+
+  if (temp > 35) {
+    ColorLED.setPixelColor(0, ColorLED.Color(255, 0, 0));  
+    ColorLED.show();  
+    ColorLED.setPixelColor(1, ColorLED.Color(255, 0, 0));  
+    ColorLED.show();  
+  } 
+  else if(temp>30)
+  {
+    ColorLED.setPixelColor(0, ColorLED.Color(200, 100, 0));  //设置彩灯颜色为红色
+    ColorLED.show();  //显示彩灯效果
+    ColorLED.setPixelColor(1, ColorLED.Color(200, 100, 0));  //设置彩灯颜色为红色
+    ColorLED.show();  //显示彩灯效果
+  }
+   else if(temp>20)
+  {
+    ColorLED.setPixelColor(0, ColorLED.Color(0, 200, 0));  //设置彩灯颜色为红色
+    ColorLED.show();  //显示彩灯效果
+    ColorLED.setPixelColor(1, ColorLED.Color(0, 200, 0));  //设置彩灯颜色为红色
+    ColorLED.show();  //显示彩灯效果
+  }
+   else if(temp>10)
+  {
+    ColorLED.setPixelColor(0, ColorLED.Color(0, 100, 200));  //设置彩灯颜色为红色
+    ColorLED.show();  //显示彩灯效果
+    ColorLED.setPixelColor(1, ColorLED.Color(0, 100, 20));  //设置彩灯颜色为红色
+    ColorLED.show();  //显示彩灯效果
+  }
+  else
+   {
+    ColorLED.setPixelColor(0, ColorLED.Color(0, 0, 200));  //设置彩灯颜色为红色
+    ColorLED.show();  //显示彩灯效果
+    ColorLED.setPixelColor(1, ColorLED.Color(0, 0, 200));  //设置彩灯颜色为红色
+    ColorLED.show();  //显示彩灯效果
+  }
+
+
+}
 ```
 
 
