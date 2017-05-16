@@ -133,7 +133,7 @@ void loop() {
 
 ## [](#header-2)作业二_声光控灯
 
->作业二.
+>只有光照和音量达到一定的条件时，灯才会亮.
 
 ```js
 #include <Adafruit_NeoPixel.h>  //调用LED彩灯的库文件
